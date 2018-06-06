@@ -24,6 +24,7 @@ var game = {
 // Memory Variables
 var steps = 0;
 var actualTml = trueTml;
+var actualSong = 'assets/songs/bedroom_song.mp3';
 var background = "assets/backgrounds/bedroom.jpg";
 
 // User Actions
@@ -37,18 +38,18 @@ game.container.addEventListener('animationend', function() {
   game.container.classList.remove('changeBg');
 })
 
-// Texts Functions
 function displayScene() {
   game.container.style.backgroundImage = "url(" + background + ")";
+  game.pnjText.textContent = actualTml[steps].pnjText.content;
   if (steps == 3 || steps == 7 && actualTml == trueTml) {
     game.container.classList.add('changeBg');
   }
-  game.pnjText.textContent = actualTml[steps].pnjText.content;
   game.pnj.src = actualTml[steps].pnjText.pnj;
   for (let a = 0; a < game.answers.length; a++) {
     game.answers[a].textContent = actualTml[steps].answers[a].content;
     game.answers[a].dataset.type = actualTml[steps].answers[a].data;
   }
+  launchMusic();
 }
 
 function getUserAnswer(choice) {
@@ -57,9 +58,9 @@ function getUserAnswer(choice) {
     steps++;
   } else if (choice.dataset.type == 2 && actualTml == trueTml) {
     actualTml = falseTml;
-    steps++;
   } else if (choice.dataset.type == 1 && actualTml == falseTml ) {
     actualTml = trueTml;
+    steps++;
   } else if (choice.dataset.type == 2 && actualTml == falseTml) {
     actualTml = dieTml;
   }
@@ -85,12 +86,38 @@ function getUserAnswer(choice) {
 }
 
 function getBackground() {
-  if (steps < 3) {
-    background = "assets/backgrounds/bedroom.jpg";
-  } else if (steps >= 3 && steps < 7) {
-    background = "assets/backgrounds/street.jpg";
-  } else if (steps >= 7) {
-    background = "assets/backgrounds/toit.jpg";
+  if (steps == 0) {
+    background = 'assets/backgrounds/bedroom.jpg';
+  } else if (steps == 3) {
+    background = 'assets/backgrounds/street.jpg';
+  } else if (steps == 7) {
+    background = 'assets/backgrounds/roof.jpg';
   }
   displayScene();
+}
+
+// Audio
+var audio = document.querySelector('.audio');
+var memory = 'assets/songs/home_song.mp3';
+
+function launchMusic() {
+  getSong();
+  console.log(memory);
+  if (memory !== actualSong) {
+    memory = actualSong;
+    audio.src = actualSong;
+    audio.volume = '0.1';
+    audio.play();
+  }
+}
+
+function getSong() {
+  if (steps == 0) {
+    actualSong = "assets/songs/bedroom_song.mp3";
+  } else if (steps == 3) {
+      actualSong = "assets/songs/street_song.mp3";
+  } else if (steps == 7) {
+      actualSong = "assets/songs/roof_song.mp3";
+  }
+  return actualSong;
 }

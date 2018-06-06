@@ -44,7 +44,7 @@ const trueTml = [
                 data: 1
             },
             {
-              content: "Le laisser partir et rester dans sa chambre.",
+              content: "Le laisser partir et attendre en PLS dans sa chambre.",
               data: 2
             }
         ]
@@ -120,7 +120,7 @@ const trueTml = [
     {
         pnjText:
         {
-            content: "Bon réglons ça rapidement.",
+            content: "Réglons ça rapidement.",
             pnj: "assets/characters/bear2.png"
         },
         answers: [
@@ -137,16 +137,16 @@ const trueTml = [
     {
         pnjText:
         {
-            content: "Bon réglons ça rapidement.",
+            content: "In work.",
             pnj: "assets/characters/bear2.png"
         },
         answers: [
             {
-                content: "Doucement, on devais essayer de lui parler.",
+                content: "Sorry.",
                 data: 1
             },
             {
-              content: "Range ton arme, non?",
+              content: "Sorry.",
               data: 2
             }
         ]
@@ -156,7 +156,6 @@ const trueTml = [
 
 
 const falseTml = [
-    {},
     {
         pnjText:
         {
@@ -248,7 +247,6 @@ const falseTml = [
 ];
 
 const dieTml = [
-    {},
     {
         pnjText:
         {
@@ -350,3 +348,9 @@ const falseAltTml = [
 const infiniteAltTml = [
 
 ];
+
+const songs = [
+  '',
+  '',
+  '',
+]

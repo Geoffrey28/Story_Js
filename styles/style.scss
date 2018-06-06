@@ -28,6 +28,8 @@ body {
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
+  perspective: 1000px;
+  perspective-origin: 50% 50%;
   &-title {
     font-size: 6rem;
     font-weight: 800;
@@ -122,6 +124,10 @@ body {
       }
     }
   }
+}
+
+.audio {
+  display: none;
 }
 
 /* Animations */
