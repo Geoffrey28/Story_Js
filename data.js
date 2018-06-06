@@ -52,21 +52,40 @@ const trueTml = [
     {
         pnjText:
         {
-            content: "En ville",
-            pnj: "assets/characters/bear2.png"
+            content: "Ah enfin! t'en as mis du temps. Viens à l'écart, je suis habillé pour me fondre dans la masse mais quand même soyons prudent.",
+            pnj: "assets/characters/bear5.png"
         },
         answers: [
             {
-                content: "azerty",
+                content: "Vas-y, je t'écoute.",
                 data: 1
             },
             {
-              content: "qsdfgh",
+              content: "Mais j'suis le seul à te voir!",
               data: 2
+            }
+        ]
+    },
+    {
+        pnjText:
+        {
+            content: "`NAME` se trouve sur le toit de l'immeuble d'en face, il doit avoir mon Graal sur lui. Je te montre comment accéder au toit et tu t'occupe de récupérer mon précieux.",
+            pnj: "assets/characters/bear5.png"
+        },
+        answers: [
+            {
+                content: "Qu'est-ce que tu sais sur lui?",
+                data: 3
+            },
+            {
+              content: "T'as une arme?",
+              data: 4
             }
         ]
     }
 ];
+
+
 
 const falseTml = [
     {},
@@ -104,6 +123,23 @@ const falseTml = [
               data: 2
             }
         ]
+    },
+    {
+        pnjText:
+        {
+            content: "TAIS TOI!!! INSOLENT!",
+            pnj: "assets/characters/bear2.png"
+        },
+        answers: [
+            {
+                content: "C'est bon c'est bon, bref ...",
+                data: 1
+            },
+            {
+              content: "hm... La je comprends pourquoi ta besoin d'aide.",
+              data: 2
+            }
+        ]
     }
 ];
 
@@ -112,16 +148,16 @@ const dieTml = [
     {
         pnjText:
         {
-            content: "game over",
-            pnj: "assets/characters/bear2.png"
+            content: "PAF! un débile en moins!",
+            pnj: "assets/characters/bear4.png"
         },
         answers: [
             {
-                content: "",
+                content: "GAME OVER",
                 data: 1
             },
             {
-              content: "",
+              content: "GAME OVER",
               data: 2
             }
         ]
@@ -131,7 +167,24 @@ const dieTml = [
         pnjText:
         {
             content: "L'ours surgit devant toi énervé et se débarasse de toi mais.. on va censurer ça!",
-            pnj: "assets/characters/bear2.png"
+            pnj: "assets/characters/bear4.png"
+        },
+        answers: [
+            {
+                content: "GAME OVER",
+                data: 1
+            },
+            {
+              content: "GAME OVER",
+              data: 2
+            }
+        ]
+    },
+    {
+        pnjText:
+        {
+            content: "...",
+            pnj: "assets/characters/bear4.png"
         },
         answers: [
             {
@@ -145,3 +198,11 @@ const dieTml = [
         ]
     }
 ]
+
+const firstEndTml = [
+
+];
+
+const secondEndTml = [
+
+];

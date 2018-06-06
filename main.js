@@ -55,6 +55,12 @@ function getUserAnswer(choice) {
     actualTml = trueTml;
   } else if (choice.dataset.type == 2 && actualTml == falseTml) {
     actualTml = dieTml;
+  } else if (choice.dataset.type == 3) {
+    actualTml = firstEndTml;
+    steps = 0;
+  } else if (choice.dataset.type == 4) {
+    actualTml = secondEndTml;
+    steps = 0;
   }
   getBackground();
   console.log(steps);
@@ -63,7 +69,7 @@ function getUserAnswer(choice) {
 function getBackground() {
   if (steps < 3) {
     background = "assets/backgrounds/bedroom.jpg";
-  } else if (steps > 3 && steps < 20) {
+  } else if (steps >= 3 && steps < 20) {
     background = "assets/backgrounds/street.jpg";
   } else if (steps < 20) {
     background = "assets/backgrounds/toit.jpg";
