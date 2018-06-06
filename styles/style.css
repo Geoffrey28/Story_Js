@@ -24,7 +24,9 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  align-items: center; }
+  align-items: center;
+  perspective: 1000px;
+  perspective-origin: 50% 50%; }
   .home-title {
     font-size: 6rem;
     font-weight: 800; }
@@ -107,6 +109,9 @@ body {
         background: rbga(40, 40, 40, 0.7);
         box-shadow: 2px 2px 20px #000; }
 
+.audio {
+  display: none; }
+
 /* Animations */
 .hideHome {
   top: -100vh;
@@ -118,7 +123,7 @@ body {
   100% {
     top: -100vh; } }
 .changeBg {
-  animation: changeBgAnim 0.2s; }
+  animation: changeBgAnim 0.3s; }
 
 @keyframes changeBgAnim {
   0% {
