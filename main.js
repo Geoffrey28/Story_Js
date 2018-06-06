@@ -33,9 +33,16 @@ for (let i = 0; i < game.answers.length; i++) {
   });
 }
 
+game.container.addEventListener('animationend', function() {
+  game.container.classList.remove('changeBg');
+})
+
 // Texts Functions
 function displayScene() {
   game.container.style.backgroundImage = "url(" + background + ")";
+  if (steps == 3 || steps == 7 && actualTml == trueTml) {
+    game.container.classList.add('changeBg');
+  }
   game.pnjText.textContent = actualTml[steps].pnjText.content;
   game.pnj.src = actualTml[steps].pnjText.pnj;
   for (let a = 0; a < game.answers.length; a++) {
@@ -56,36 +63,34 @@ function getUserAnswer(choice) {
   } else if (choice.dataset.type == 2 && actualTml == falseTml) {
     actualTml = dieTml;
   }
-  if (choice.dataset.type == 3) {
+  if (choice.dataset.type == 3 && actualTml == trueTml) {
     actualTml = altTml;
     steps = 0;
   }
-  if (choice.dataset.type == 1 && actualTml == altTml) {
+  if (choice.dataset.type == 1 && actualTml == trueAltTml) {
     actualTml = altTml;
     steps++;
-  } else if (choice.dataset == 2 && actualTml == altTml) {
-    actualTml = badAltTml;
-  } else if (choice.dataset == 1 && actualTml == badAltTml) {
-    actualTml = altTml;
+  } else if (choice.dataset == 2 && actualTml == trueAltTml) {
+    actualTml = falseAltTml;
+  } else if (choice.dataset == 1 && actualTml == falseAltTml) {
+    actualTml = trueAltTml;
     steps++;
-  } else if (choice.dataset == 2 && actualTml == badAltTml) {
-    actualTml = infiniteTml;
+  } else if (choice.dataset == 2 && actualTml == falseAltTml) {
+    actualTml = infiniteAltTml;
+  } else if (actualTml == infiniteAltTml) {
+    actualTml = trueAltTml;
   }
   getBackground();
   console.log(steps);
 }
 
 function getBackground() {
-  if (actualTml != altTml) {
-    if (steps < 3) {
-      background = "assets/backgrounds/bedroom.jpg";
-    } else if (steps >= 3) {
-      background = "assets/backgrounds/street.jpg";
-    }
-  } else {
-    if (steps < 10) {
-      background = "assets/backgrounds/street.jpg";
-    }
+  if (steps < 3) {
+    background = "assets/backgrounds/bedroom.jpg";
+  } else if (steps >= 3 && steps < 7) {
+    background = "assets/backgrounds/street.jpg";
+  } else if (steps >= 7) {
+    background = "assets/backgrounds/toit.jpg";
   }
   displayScene();
 }
