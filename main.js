@@ -55,26 +55,37 @@ function getUserAnswer(choice) {
     actualTml = trueTml;
   } else if (choice.dataset.type == 2 && actualTml == falseTml) {
     actualTml = dieTml;
-  } else if (choice.dataset.type == 3) {
-    actualTml = firstEndTml;
+  }
+  if (choice.dataset.type == 3) {
+    actualTml = altTml;
     steps = 0;
-  } else if (choice.dataset.type == 4) {
-    actualTml = secondEndTml;
-    steps = 0;
+  }
+  if (choice.dataset.type == 1 && actualTml == altTml) {
+    actualTml = altTml;
+    steps++;
+  } else if (choice.dataset == 2 && actualTml == altTml) {
+    actualTml = badAltTml;
+  } else if (choice.dataset == 1 && actualTml == badAltTml) {
+    actualTml = altTml;
+    steps++;
+  } else if (choice.dataset == 2 && actualTml == badAltTml) {
+    actualTml = infiniteTml;
   }
   getBackground();
   console.log(steps);
 }
 
 function getBackground() {
-  if (steps < 3) {
-    background = "assets/backgrounds/bedroom.jpg";
-  } else if (steps >= 3 && steps < 20) {
-    background = "assets/backgrounds/street.jpg";
-  } else if (steps < 20) {
-    background = "assets/backgrounds/toit.jpg";
+  if (actualTml != altTml) {
+    if (steps < 3) {
+      background = "assets/backgrounds/bedroom.jpg";
+    } else if (steps >= 3) {
+      background = "assets/backgrounds/street.jpg";
+    }
   } else {
-    console.log('nope');
+    if (steps < 10) {
+      background = "assets/backgrounds/street.jpg";
+    }
   }
   displayScene();
 }

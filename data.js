@@ -75,11 +75,11 @@ const trueTml = [
         answers: [
             {
                 content: "Qu'est-ce que tu sais sur lui?",
-                data: 3
+                data: 1
             },
             {
               content: "T'as une arme?",
-              data: 4
+              data: 3
             }
         ]
     }
@@ -199,10 +199,30 @@ const dieTml = [
     }
 ]
 
-const firstEndTml = [
+const altTml = [
+    {
+        pnjText:
+        {
+            content: "C'est ça que je veux entendre! Mais attends un peu je travaille dessus la.",
+            pnj: "assets/characters/bear4.png"
+        },
+        answers: [
+            {
+                content: "IN WORK...",
+                data: 1
+            },
+            {
+              content: "IN WORK...",
+              data: 2
+            }
+        ]
+    }
+];
+
+const badAltTml = [
 
 ];
 
-const secondEndTml = [
+const infiniteAltTml = [
 
 ];
