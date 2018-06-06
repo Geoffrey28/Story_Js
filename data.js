@@ -23,7 +23,7 @@ const trueTml = [
         },
         answers: [
             {
-                content: "",
+                content: "Je te suis!",
                 data: 1
             },
             {
@@ -48,6 +48,23 @@ const trueTml = [
               data: 2
             }
         ]
+    },
+    {
+        pnjText:
+        {
+            content: "En ville",
+            pnj: "assets/characters/bear2.png"
+        },
+        answers: [
+            {
+                content: "azerty",
+                data: 1
+            },
+            {
+              content: "qsdfgh",
+              data: 2
+            }
+        ]
     }
 ];
 
@@ -57,34 +74,74 @@ const falseTml = [
         pnjText:
         {
             content: "Encore un débile...",
-            pnj: "assets/characters/bear2.png"
+            pnj: "assets/characters/bear4.png"
         },
         answers: [
             {
-                content: "...",
+                content: "Ok Ok, j'ai compris..",
                 data: 1
             },
             {
-              content: "Ton père",
+              content: "ALEEED! fo fer koi?",
               data: 2
             }
         ]
     },
+    {},
     {
         pnjText:
         {
-            content: "fais bellek",
-            pnj: "assets/characters/bear2.png"
+            content: "Une heure après que l'ours soit parti, tu entends un coup de feu derrière ta fenêtre.",
+            pnj: ""
         },
         answers: [
             {
-                content: "``courir``",
-                data: 1
+                content: "S'approcher de la fenêtre.",
+                data: 2
             },
             {
-              content: "///",
+              content: "Ne pas bouger",
               data: 2
             }
         ]
     }
 ];
+
+const dieTml = [
+    {},
+    {
+        pnjText:
+        {
+            content: "game over",
+            pnj: "assets/characters/bear2.png"
+        },
+        answers: [
+            {
+                content: "",
+                data: 1
+            },
+            {
+              content: "",
+              data: 2
+            }
+        ]
+    },
+    {},
+    {
+        pnjText:
+        {
+            content: "L'ours surgit devant toi énervé et se débarasse de toi mais.. on va censurer ça!",
+            pnj: "assets/characters/bear2.png"
+        },
+        answers: [
+            {
+                content: "GAME OVER",
+                data: 1
+            },
+            {
+              content: "GAME OVER",
+              data: 2
+            }
+        ]
+    }
+]
