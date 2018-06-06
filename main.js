@@ -64,11 +64,11 @@ function getUserAnswer(choice) {
     actualTml = dieTml;
   }
   if (choice.dataset.type == 3 && actualTml == trueTml) {
-    actualTml = altTml;
+    actualTml = trueAltTml;
     steps = 0;
   }
   if (choice.dataset.type == 1 && actualTml == trueAltTml) {
-    actualTml = altTml;
+    actualTml = trueAltTml;
     steps++;
   } else if (choice.dataset == 2 && actualTml == trueAltTml) {
     actualTml = falseAltTml;
